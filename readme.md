@@ -48,10 +48,11 @@ $l.ajax({
 ```
 The user should expect to get back an object containing such information as temperature, humidity, and weather conditions etc. The user may also attach .then() clauses to the ajax request as the returns a promise.
 
-***Methods***
+##***Methods***
 There are several methods available to an element newly created or selected with **$l()**. These methods are available to all DOMNodeCollection objects.
 
-**each(callback)**
+###**each(callback)**
+
 This method iterates through all the DOM elements in a collection and executes a callback on each:
 ```Javascript
 const firstFiveLetters = $l(".letters");
@@ -66,7 +67,8 @@ expected logged result:
 <a href="#">E</a>
 ```
 
-**html()**
+###**html()**
+
 This method sets the inner HTML of each element if passed a string (using firstFiveLetters from each()):
 ```Javascript
 const firstFiveLetters = $l(".letters");
@@ -96,7 +98,8 @@ returns:
 <a href="#">A</a>
 ```
 
-**empty()**
+###**empty()**
+
 This method deletes all text content in every element in the collection.
 ```Javascript
 const firstPara = $l(".first-p");
@@ -104,7 +107,8 @@ firstPara.empty();
 ```
 results in the deletion of text of the first paragraph. The HTML tags and attributes are still intact.
 
-**append(obj)**
+###**append(obj)**
+
 This method appends an element to all elements in the selected collection. If the parameter is a string, the element will be added as text. If the element is an HTMLElement or collection of HTMLElements, the entire element/collection will be added:
 ```Javascript
 const secondPara = $l(".second-p");
@@ -112,7 +116,8 @@ secondPara.append(firstPara);
 ```
 A copy of the first paragraph will be added within the second paragraph at the end.
 
-**attr(key, val)**
+###**attr(key, val)**
+
 If a val is provided as a string, this method will set the key attribute to that val. Otherwise, the method will get the current value of that key of the first selected element in the collection.
 ```Javascript
 const firstPara = $l(".first-p");
@@ -125,7 +130,8 @@ firstPara.attr("class", "green");
 ```
 returns undefined but changes the class of the first paragraph only to "green"
 
-**addClass(newClass)**
+###**addClass(newClass)**
+
 This method adds a new class attribute to the elements in the collection.
 ```Javascript
 const thirdPara = $l(".third-p");
@@ -133,7 +139,8 @@ thirdPara.addClass("purple");
 ```
 adds "purple" to the third paragraph class values.
 
-**removeClass(oldClass)**
+###**removeClass(oldClass)**
+
 This method does the opposite of addClass().
 ```Javascript
 const firstPara = $l(".first-p");
@@ -141,7 +148,8 @@ firstPara.removeClass("orange");
 ```
 removes "orange" from the first paragraph class values.
 
-**toggleClass(classToToggle)**
+###**toggleClass(classToToggle)**
+
 This method adds the class value to elements in the collection that do not currently have it and removes it from those that do:
 ```Javascript
 const paragraphs = $l(".p");
@@ -149,7 +157,8 @@ paragraphs.toggleClass("orange");
 ```
 adds "orange" to the second and third paragraphs and removes it from the first.
 
-**children()**
+###**children()**
+
 This method returns the immediate children of each element in the selected collection in a DOMNodeCollection.
 ```Javascript
 const list = $l(".list");
@@ -157,7 +166,8 @@ const letters = list.children();
 ```
 returns a DOMNodeCollection object containing all the li children.
 
-**parent()**
+###**parent()**
+
 This method is similar to the children() method except it selects the immediate parents of the elements in the collection
 ```Javascript
 const paragraphs = $l(".p");
@@ -165,7 +175,8 @@ paragraphs.parents();
 ```
 returns a DOMNodeCollection containing the aside (class="sidebar random people blue"), article (class="content"), and div (class="more-content") elements, in that order.
 
-**find(selector)**
+###**find(selector)**
+
 This method returns a DOMNodeCollection of children of each element in the collection that match the given selector:
 ```Javascript
 const list = $l(".list");
@@ -173,14 +184,16 @@ list.find(".vowel");
 ```
 returns a DOMNodeCollection containing the "A" and "E" list items.
 
-**on(eventName, callback)**
+###**on(eventName, callback)**
+
 This method adds an EventListener to each element in the collection with eventName being the type of event, and callback being the callback that is executed when that event is triggered.
 ```Javascript
 const firstFiveLetters = $l(".letters");
 firstFiveLetters.on("click", () => alert("you have clicked on a letter"));
 ```
 
-**off(eventName)**
+###**off(eventName)**
+
 This method removes EventListeners that have been added to elements with the on() method.
 ```Javascript
 const firstFiveLetters = $l(".letters");
