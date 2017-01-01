@@ -1,5 +1,5 @@
 #**DOMarama**
-Link: [Here](tbd.com)
+Link: [Here](http://runtao0.github.io/DOMarama)
 
 DOMarama is a Javascript clone of some of [jQuery's](http://api.jquery.com/) basic DOM creation,
 manipulation, and ajax methods. The user only needs to copy this repo and open the index.html
