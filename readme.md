@@ -1,9 +1,9 @@
 #**DOMarama**
 Link: [Here](http://runtao0.github.io/DOMarama)
 
-DOMarama is a Javascript clone of some of [jQuery's](http://api.jquery.com/) basic DOM creation,
-manipulation, and ajax methods. The user only needs to copy this repo and open the index.html
-in Google Chrome and inspect. jQuery is available on the window for comparison.
+DOMarama is a JavaScript library for DOM manipulation inspired by [jQuery](http://api.jquery.com/). DOMarama allows for basic DOM creation,
+manipulation, and AJAX methods. The user only needs to copy this repo and open the index.html
+in Google Chrome and inspect, or check out the live link above. A basic CSS stylesheet is provided that displays colors (primary and secondary) if added to a DOM class attribute. jQuery is available on the window for comparison.
 
 The following are available to the user on the window, and allow the user to create and select elements on the document:
 ```Javascript
