@@ -46,7 +46,7 @@ $l.ajax({
      },
   });
 ```
-The user should expect to get back an object containing such information as temperature, humidity, and weather conditions etc. The user may also attach .then() clauses to the ajax request as the returns a promise.
+The user should expect to get back an object containing such information as temperature, humidity, and weather conditions etc. The user may also attach .then() clauses to the ajax request as each chained function returns a successive promise.
 
 ##***Methods***
 There are several methods available to an element newly created or selected with **$l()**. These methods are available to all DOMNodeCollection objects.
