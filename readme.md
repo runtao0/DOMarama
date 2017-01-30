@@ -33,6 +33,7 @@ will add the anonymous function to a function queue, and execute the function af
 
 
 The user may also use the following request options hash for test purposes:
+
 ```Javascript
 $l.ajax({
      type: 'GET',

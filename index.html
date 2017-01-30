@@ -59,7 +59,7 @@
         <article>
           <section class="button" id="html">
             <h3>HTML</h3>
-            Click here to <strong>switch up</strong> the food
+            Click here to <strong>add some food</strong> the plates
           </section>
           <section class="button" id="empty">
             <h3>Empty</h3>
@@ -92,7 +92,7 @@
           </section>
           <section class="button" id="child">
             <h3>Child</h3>
-            Click here to <strong>change</strong> the food on top of plates to grey
+            Click here to change the food on top of plates to <strong>grey</strong>
           </section>
           <section class="button" id="find">
             <h3>Find</h3>
@@ -177,6 +177,10 @@
          $l("plate").each((plate) => {
            $l(plate).html(food[Math.floor(Math.random() * 8)]);
          });
+       });
+
+       $l("#toggleClass").on("click", () => {
+         $l("plate").toggleClass("blue");
        });
 
        $l("#event-on").on("click", () => {
