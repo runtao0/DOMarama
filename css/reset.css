@@ -1,0 +1,80 @@
+html, body, header, nav, h1, a, ul, li,
+strong, main, section, img, div, h2, p,
+form, fieldset, label, input, textarea,
+button, article, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: inherit;
+  font-size: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+  font-weight: inherit;
+  z-index: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.jumbo {
+  font-size: 420%;
+  left: 0;
+  top: 0;
+}
+
+.blue {
+  background: rgb(143, 249, 249);
+  border-bottom: solid 5px rgb(120, 210, 210);
+}
+.plates .red {
+  background: rgb(249, 143, 175);
+  border-bottom: solid 5px rgb(210, 120, 147);
+}
+
+.grey {
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
+}
+
+body {
+  background: transparent;
+  color: white;
+  background: black;
+  font-family: sans-serif;
+  font-weight: 500;
+  box-sizing: content-box;
+  z-index: 0;
+  font-size: 16px;
+}
+
+strong {
+  color: rgb(236, 194, 15);
+}
+
+h3 {
+  font-size: 100%;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+}
+
+h2:not(:first-child) {
+  margin: 10px 0 0 0;
+}
+
+.button:hover{
+  cursor: pointer;
+  background-color: rgb(78, 1, 1);
+}
+
+/*clearfix*/
+.group:after {
+  clear: both;
+  content: "";
+  display: block;
+}

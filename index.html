@@ -3,50 +3,216 @@
   <head>
     <meta charset="utf-8">
     <title>DOMarama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="text/javascript" src="./lib/DOMarama.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
     </script>
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/master.css">
     <link rel="icon" href="images/favicon.png">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Heading</h1>
-
-    <main>
-      <aside class="sidebar random people blue" things="people places location">
-        <h2>Side</h2>
-        <ul class="list">
-          <li class="letters vowel"><a href="#">A</a></li>
-          <li class="letters"><a href="#">B</a></li>
-          <li class="letters"><a href="#">C</a></li>
-          <li class="letters"><a href="#">D</a></li>
-          <li class="letters vowel"><a href="#">E</a></li>
-        </ul>
-        <p class="p first-p orange">THIS IS THE FIRST PARAGRAPH Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </aside>
-
-      <article class="content">
-        <h2>Article</h2>
-
-        <p class="p second-p">THIS IS THE SECOND PARAGRAPH Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <h3>subheading</h3>
+    <header>
+      <h1 class="title">DOMarama</h1>
+      <a target="_blank" href="http://github.com/runtao0/DOMarama">Github</a>
+      <!-- <a target="_blank" href="https://github.com/runtao0/DOMarama/blob/gh-pages/index.html">Source</a> -->
+      <section class="temp"></section>
+      <section class="weather"></section>
+    </header>
+    <section class="plates">
+      <plate class="blue"></plate>
+      <plate></plate>
+      <plate class="blue"></plate>
+      <plate></plate>
+      <plate class="blue"></plate>
+      <plate></plate>
+      <plate class="blue"></plate>
+      <plate></plate>
+      <plate class="blue"></plate>
+    </section>
+    <div class="info">
+      <section class="ajax events">
+        <h2>AJAX Requests</h2>
+        <article>
+          <section class="button" id="ajax1">
+            You can user DOMarama AJAX requests to web API's. Click here to view your <strong>temperature</strong> in the header.
+          </section>
+          <section class="button" id="ajax2">
+            Click here to view the <strong>weather</strong> in the header.
+          </section>
+        </article>
+        <h2>Event Handling</h2>
+        <article>
+          <section class="button" id="event-on">
+            <h3>On</h3>
+            Click here so that dishes <strong>start jumping</strong> when you click on them (there have to be food first)
+          </section>
+          <section class="button" id="event-off">
+            <h3>Off</h3>
+            Click here so that dishes <strong>stop jumping</strong> when you click on them
+          </section>
+        </article>
+      </section>
+      <section class="dom">
+        <h2>DOM Manipulation</h2>
+        <article>
+          <section class="button" id="html">
+            <h3>HTML</h3>
+            Click here to <strong>switch up</strong> the food
+          </section>
+          <section class="button" id="empty">
+            <h3>Empty</h3>
+            Click here to <strong>remove</strong> food from the plates
+          </section>
+          <section class="button" id="addClass">
+            <h3>Add Class</h3>
+            Click here to make <strong>double</strong> a random portion
+          </section>
+          <section class="button" id="removeClass">
+            <h3>Remove Class</h3>
+            Click here to make <strong>reduce</strong> a random portion
+          </section>
+          <section class="button" id="toggleClass">
+            <h3>Toggle Class</h3>
+            Click here to make while plates <strong>blue</strong> and blue plates white
+          </section>
+          <section class="button" id="append">
+            <h3>Append</h3>
+            Click here to add a <strong>plate</strong> to the table
+          </section>
+        </article>
+      </section>
+      <section class="traverse">
+        <h2>Traversal</h2>
+        <article>
+          <section class="button" id="parent">
+            <h3>Parent</h3>
+            Click here to <strong>change</strong> the plates with food on top
+          </section>
+          <section class="button" id="child">
+            <h3>Child</h3>
+            Click here to <strong>change</strong> the food on top of plates to grey
+          </section>
+          <section class="button" id="find">
+            <h3>Find</h3>
+            Click here to find only the <strong>sushi</strong>
+          </section>
       </article>
-
-      <div class="more-content">
-        <p class="p third-p">THIS IS THE THIRD PARAGRAPH Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      </div>
-    </main>
-    <div class="first">
-      first div
-      <div>
-        second div
-      </div>
+      </section>
     </div>
+    <script type="text/javascript">
+      var food = [
+        '<i class="em em-fish_cake"></i>',
+        '<i class="em em-rice_ball"></i>',
+        '<i class="em em-rice_cracker"></i>',
+        '<i class="em em-dango"></i>',
+        '<i class="em em-sushi"></i>',
+        '<i class="em em-fried_shrimp"></i>',
+        "",
+        ""
+      ]
+      $l("#ajax1").on("click", () => {
+        $l.ajax({
+           type: 'GET',
+           url: "http://api.openweathermap.org/data/2.5/weather?id=5128638&appid=7143e9f97ab2d8d9b4266f55738e8542",
+           success(data) {
+             var fahr = (9.0 / 5.0) * (JSON.parse(data).main.temp - 273) + 32;
+             $l(".temp").html(Math.round(fahr).toString() + "° F");
+           },
+           error() {
+             $l(".temp").html("An error occurred.");
+           },
+        })
+      });
 
-    <div>
-      third div
-    </div>
+      $l("#ajax2").on("click", () => {
+        $l.ajax({
+           type: 'GET',
+           url: "http://api.openweathermap.org/data/2.5/weather?id=5128638&appid=7143e9f97ab2d8d9b4266f55738e8542",
+           success(data) {
+             var weather = '<i class="em em-umbrella"></i>'
+             switch (JSON.parse(data).weather.main) {
+               case "Rain":
+                weather = '<i class="em em-umbrella"></i>';
+               case "Thunderstorm":
+                weather = '<i class="em em-zap"></i>';
+               case "Drizzle":
+                weather = '<i class="em em-wind_chime"></i>';
+               case "Snow":
+               weather = '<i class="em em-snowflake"></i>';
+               case "Atmosphere":
+                weather = '<i class="em em-foggy"></i>';
+               case "Clear":
+                weather = '<i class="em em-sunny"></i>';
+               case "Clouds":
+                weather = '<i class="em em-partly_sunny"></i>'
+               case "Extreme":
+                weather = '<i class="em em-volcano"></i>';
+             }
+             $l(".weather").html(weather);
+           }
+         });
+       });
 
+       $l("#append").on("click", () => {
+         $l(".plates").append($l("plate").HTMLNodeArray[1]);
+       });
+
+       $l("#empty").on("click", () => {
+         $l("plate").empty();
+       });
+
+       $l("#addClass").on("click", () => {
+         var $dishes = $l("plate").find("i");
+         $l($dishes[Math.floor(Math.random() * $dishes.length)]).addClass("jumbo");
+       });
+
+       $l("#removeClass").on("click", () => {
+         var $dishes = $l("plate").find(".jumbo");
+         $l($dishes[Math.floor(Math.random() * $dishes.length)]).removeClass("jumbo");
+       });
+
+       $l("#html").on("click", () => {
+         $l("plate").each((plate) => {
+           $l(plate).html(food[Math.floor(Math.random() * 8)]);
+         });
+       });
+
+       $l("#event-on").on("click", () => {
+         var $dishes = $l("plate").find("i");
+         $dishes.forEach((dish) => {
+           $l(dish).on("click", () => {
+             $l(dish).addClass("bounce");
+           });
+         });
+       });
+
+       $l("#event-off").on("click", () => {
+         var $dishes = $l("plate").find("i");
+         $dishes.forEach((dish) => {
+           $l(dish).removeClass("bounce");
+           $l(dish).off("click");
+         });
+       });
+
+       $l("#parent").on("click", () => {
+         var $dishes = $l("i").parents();
+         $dishes.addClass("red");
+       })
+       $l("#child").on("click", () => {
+         var $dishes = $l("plate").children();
+         debugger
+         $dishes.addClass("grey");
+       })
+       $l("#find").on("click", () => {
+         var $dishes = $l("plate").find("i");
+         $dishes.forEach((dish) => {
+           if (dish.classList.contains("em-sushi")) {
+             $l(dish).addClass("bounce");
+           }
+         });
+       });
+    </script>
   </body>
 </html>
