@@ -131,24 +131,32 @@
            type: 'GET',
            url: "http://api.openweathermap.org/data/2.5/weather?id=5128638&appid=7143e9f97ab2d8d9b4266f55738e8542",
            success(data) {
-             var weather = '<i class="em em-umbrella"></i>'
-             switch (JSON.parse(data).weather.main) {
+             var weather = '<i class="em em-umbrella"></i>';
+             switch (JSON.parse(data).weather[0].main) {
                case "Rain":
                 weather = '<i class="em em-umbrella"></i>';
+                break;
                case "Thunderstorm":
                 weather = '<i class="em em-zap"></i>';
+                break;
                case "Drizzle":
                 weather = '<i class="em em-wind_chime"></i>';
+                break;
                case "Snow":
                weather = '<i class="em em-snowflake"></i>';
+               break;
                case "Atmosphere":
                 weather = '<i class="em em-foggy"></i>';
+                break;
                case "Clear":
                 weather = '<i class="em em-sunny"></i>';
+                break;
                case "Clouds":
-                weather = '<i class="em em-partly_sunny"></i>'
+                weather = '<i class="em em-partly_sunny"></i>';
+                break;
                case "Extreme":
                 weather = '<i class="em em-volcano"></i>';
+                break;
              }
              $l(".weather").html(weather);
            }
