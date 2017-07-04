@@ -1,7 +1,7 @@
-#**DOMarama**
-Link: [Here](http://runtao0.github.io/DOMarama)
+#**Tsukimi uDOM**
+Link: [Here](http://runtao0.github.io/uDOM)
 
-DOMarama is a JavaScript library for DOM manipulation inspired by [jQuery](http://api.jquery.com/). DOMarama allows for basic DOM creation,
+Tsukimi uDOM is a JavaScript library for DOM manipulation inspired by [jQuery](http://api.jquery.com/). uDOM allows for basic DOM creation,
 manipulation, and AJAX methods. The user only needs to copy this repo and open the index.html
 in Google Chrome and inspect, or check out the live link above. A basic CSS stylesheet is provided that displays colors (primary and secondary) if added to a DOM class attribute. jQuery is available on the window for comparison.
 
