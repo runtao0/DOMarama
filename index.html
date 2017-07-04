@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DOMarama</title>
+    <title>Tsukimi uDOM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="text/javascript" src="./lib/DOMarama.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-      <h1 class="title">DOMarama</h1>
+      <h1 class="title">Tsukimi uDOM</h1>
       <a target="_blank" href="http://github.com/runtao0/DOMarama">Github</a>
       <!-- <a target="_blank" href="https://github.com/runtao0/DOMarama/blob/gh-pages/index.html">Source</a> -->
       <section class="temp"></section>
@@ -181,11 +181,13 @@
          $l($dishes[Math.floor(Math.random() * $dishes.length)]).removeClass("jumbo");
        });
 
-       $l("#html").on("click", () => {
+       const addFood = () => {
          $l("plate").each((plate) => {
            $l(plate).html(food[Math.floor(Math.random() * 8)]);
          });
-       });
+       }
+
+       $l("#html").on("click", addFood);
 
        $l("#toggleClass").on("click", () => {
          $l("plate").toggleClass("blue");
@@ -225,6 +227,8 @@
            }
          });
        });
+
+       addFood();
     </script>
   </body>
 </html>
